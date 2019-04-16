@@ -12,6 +12,7 @@
 		8806656A22664DCB00C32B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8806656822664DCB00C32B53 /* Main.storyboard */; };
 		8806656C22664DCB00C32B53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806656B22664DCB00C32B53 /* Assets.xcassets */; };
 		8806656F22664DCB00C32B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8806656D22664DCB00C32B53 /* LaunchScreen.storyboard */; };
+		8806657822664F1200C32B53 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806657722664F1200C32B53 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8806656B22664DCB00C32B53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8806656E22664DCB00C32B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8806657022664DCB00C32B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8806657722664F1200C32B53 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		8806656322664DCB00C32B53 /* MemoryCard */ = {
 			isa = PBXGroup;
 			children = (
+				8806657622664EEF00C32B53 /* Models */,
 				8806656422664DCB00C32B53 /* AppDelegate.swift */,
 				8806656622664DCB00C32B53 /* ViewController.swift */,
 				8806656822664DCB00C32B53 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				8806657022664DCB00C32B53 /* Info.plist */,
 			);
 			path = MemoryCard;
+			sourceTree = "<group>";
+		};
+		8806657622664EEF00C32B53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8806657722664F1200C32B53 /* Card.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8806656722664DCB00C32B53 /* ViewController.swift in Sources */,
+				8806657822664F1200C32B53 /* Card.swift in Sources */,
 				8806656522664DCB00C32B53 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +222,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -252,6 +265,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
