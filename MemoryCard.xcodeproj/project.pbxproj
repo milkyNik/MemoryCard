@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		8806656522664DCB00C32B53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806656422664DCB00C32B53 /* AppDelegate.swift */; };
-		8806656722664DCB00C32B53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806656622664DCB00C32B53 /* ViewController.swift */; };
 		8806656A22664DCB00C32B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8806656822664DCB00C32B53 /* Main.storyboard */; };
 		8806656C22664DCB00C32B53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806656B22664DCB00C32B53 /* Assets.xcassets */; };
 		8806656F22664DCB00C32B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8806656D22664DCB00C32B53 /* LaunchScreen.storyboard */; };
 		8806657822664F1200C32B53 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806657722664F1200C32B53 /* Card.swift */; };
 		8806657A226652F300C32B53 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88066579226652F300C32B53 /* MemoryGame.swift */; };
+		8806657D22665DE100C32B53 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806657C22665DE100C32B53 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8806656122664DCB00C32B53 /* MemoryCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8806656422664DCB00C32B53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8806656622664DCB00C32B53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8806656922664DCB00C32B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8806656B22664DCB00C32B53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8806656E22664DCB00C32B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8806657022664DCB00C32B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8806657722664F1200C32B53 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		88066579226652F300C32B53 /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		8806657C22665DE100C32B53 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +58,9 @@
 		8806656322664DCB00C32B53 /* MemoryCard */ = {
 			isa = PBXGroup;
 			children = (
+				8806657B22665DCC00C32B53 /* Controller */,
 				8806657622664EEF00C32B53 /* Models */,
 				8806656422664DCB00C32B53 /* AppDelegate.swift */,
-				8806656622664DCB00C32B53 /* ViewController.swift */,
 				8806656822664DCB00C32B53 /* Main.storyboard */,
 				8806656B22664DCB00C32B53 /* Assets.xcassets */,
 				8806656D22664DCB00C32B53 /* LaunchScreen.storyboard */,
@@ -76,6 +76,14 @@
 				88066579226652F300C32B53 /* MemoryGame.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		8806657B22665DCC00C32B53 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8806657C22665DE100C32B53 /* GameController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8806656722664DCB00C32B53 /* ViewController.swift in Sources */,
 				8806657822664F1200C32B53 /* Card.swift in Sources */,
+				8806657D22665DE100C32B53 /* GameController.swift in Sources */,
 				8806657A226652F300C32B53 /* MemoryGame.swift in Sources */,
 				8806656522664DCB00C32B53 /* AppDelegate.swift in Sources */,
 			);
