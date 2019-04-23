@@ -16,6 +16,7 @@ protocol MemoryGameProtocol {
 }
 
 class MemoryGame {
+    var delegate: MemoryGameProtocol?
     var cards: [Card] = [Card]()
     var cardsShown: [Card] = [Card]()
     var isPlaying: Bool = false
@@ -32,6 +33,8 @@ class MemoryGame {
         cards = shuffleCards(cards: cardsArray)
         isPlaying = true
         
+        delegate?.memoryGameDidStart(self)
+        
         return cards
     }
     
@@ -42,7 +45,8 @@ class MemoryGame {
     }
     
     func endGame() {
-        
+        isPlaying = false
+        delegate?.memoryGameDidEnd(self)
     }
     
     func cardAtIndex(_ index: Int) -> Card? {
@@ -75,6 +79,8 @@ class MemoryGame {
     func didSelectCard(_ card: Card?) {
         guard let card = card else { return }
         
+        delegate?.memoryGame(self, showCards: [card])
+        
         if unmatchedCardShown() {
             let unmatched = unmatchedCard()!
             
@@ -82,6 +88,12 @@ class MemoryGame {
                 cardsShown.append(card)
             } else {
                 let secondCard = cardsShown.removeLast()
+                
+                let delayTime = DispatchTime.now() + 1.0
+                
+                DispatchQueue.main.asyncAfter(deadline: delayTime, execute: { 
+                    self.delegate?.memoryGame(self, hideCards: [card, secondCard])
+                })
             }
         } else {
             cardsShown.append(card)

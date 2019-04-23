@@ -19,7 +19,7 @@ class GameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        game.delegate = self
+        game.delegate = self
         
         collectionView.dataSource = self
         collectionView.delegate = self
