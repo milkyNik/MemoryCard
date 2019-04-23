@@ -81,7 +81,60 @@ extension GameController : UICollectionViewDelegate, UICollectionViewDataSource 
     }
 }
 
-
+extension GameController : MemoryGameProtocol {
+    
+    func memoryGameDidStart(_ game: MemoryGame) {
+        collectionView.reloadData()
+    }
+    
+    func memoryGameDidEnd(_ game: MemoryGame) {
+        let alertController = UIAlertController(title: defaultAlertTitle,
+                                                message: defaultAlertMessage,
+                                                preferredStyle: .alert)
+       
+        let cancelAction = UIAlertAction(title: "Nah",
+                                         style: .default) { [weak self] (action) in
+                                            self?.collectionView.isHidden = true
+        }
+        
+        let playAgainAction = UIAlertAction(title: "Dale!",
+                                            style: .default) { [weak self] (action) in
+                                                self?.collectionView.isHidden = true
+                                                self?.resetGame()
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(playAgainAction)
+        
+        self.present(alertController, animated: true) {}
+        
+        resetGame()
+    }
+    
+    func memoryGame(_ game: MemoryGame, showCards cards: [Card]) {
+        for card in cards {
+            guard let index = game.indexForCard(card)
+                else { continue
+            }
+            
+            let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! CardCell
+            
+            cell.showCard(true, animated: true)
+        }
+    }
+    
+    func memoryGame(_ game: MemoryGame, hideCards cards: [Card]) {
+        for card in cards {
+            guard let index = game.indexForCard(card)
+                else { continue
+            }
+            
+            let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! CardCell
+            
+            cell.showCard(false, animated: true)
+        }
+    }
+}
 
 
 

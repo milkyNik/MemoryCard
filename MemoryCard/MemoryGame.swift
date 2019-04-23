@@ -8,6 +8,13 @@
 
 import Foundation
 
+protocol MemoryGameProtocol {
+    func memoryGameDidStart(_ game: MemoryGame)
+    func memoryGameDidEnd(_ game: MemoryGame)
+    func memoryGame(_ game: MemoryGame, showCards cards: [Card])
+    func memoryGame(_ game: MemoryGame, hideCards cards: [Card])
+}
+
 class MemoryGame {
     var cards: [Card] = [Card]()
     var cardsShown: [Card] = [Card]()

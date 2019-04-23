@@ -15,6 +15,7 @@
 		8806657A226652F300C32B53 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88066579226652F300C32B53 /* MemoryGame.swift */; };
 		8806657D22665DE100C32B53 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806657C22665DE100C32B53 /* GameController.swift */; };
 		883F8486226F8B8900EBD2F5 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883F8485226F8B8900EBD2F5 /* CardCell.swift */; };
+		883F8489226F8FA900EBD2F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883F8488226F8FA900EBD2F5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		88066579226652F300C32B53 /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		8806657C22665DE100C32B53 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		883F8485226F8B8900EBD2F5 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		883F8488226F8FA900EBD2F5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		8806656322664DCB00C32B53 /* MemoryCard */ = {
 			isa = PBXGroup;
 			children = (
+				883F8487226F8F9800EBD2F5 /* Constants */,
 				883F8484226F8B7300EBD2F5 /* Cells */,
 				8806657B22665DCC00C32B53 /* Controller */,
 				8806657622664EEF00C32B53 /* Models */,
@@ -95,6 +98,14 @@
 				883F8485226F8B8900EBD2F5 /* CardCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		883F8487226F8F9800EBD2F5 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				883F8488226F8FA900EBD2F5 /* Constants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 				8806657D22665DE100C32B53 /* GameController.swift in Sources */,
 				8806657A226652F300C32B53 /* MemoryGame.swift in Sources */,
 				8806656522664DCB00C32B53 /* AppDelegate.swift in Sources */,
+				883F8489226F8FA900EBD2F5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
