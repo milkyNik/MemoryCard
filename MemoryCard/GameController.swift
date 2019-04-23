@@ -24,8 +24,6 @@ class GameController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isHidden = true
-        
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -62,13 +60,47 @@ extension GameController : UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
+        
+        cell.showCard(false, animated: false)
+        
+        guard let card = game.cardAtIndex(indexPath.item) else {return cell}
+        cell.card = card
+
+        
+        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CardCell
         
+        if cell.shown {return}
+        game.didSelectCard(cell.card)
         
-        
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
