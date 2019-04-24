@@ -7,18 +7,19 @@
 //
 
 import Foundation
-import AFNetworking
-import SwiftyJSON
+import UIKit
+//import AFNetworking
+//import SwiftyJSON
 
 typealias CardsArray = [Card]
 
-class APIClient: AFHTTPSessionManager {
+class APIClient {//: AFHTTPSessionManager {
     
-    struct URLHosts {
-        static let baseURL = "https://source.unsplash.com/"
-        static let random = "random/"
-        static let category = "category/"
-    }
+//    struct URLHosts {
+//        static let baseURL = "https://source.unsplash.com/"
+//        static let random = "random/"
+//        static let category = "category/"
+//    }
     
     static let shared = APIClient()
     

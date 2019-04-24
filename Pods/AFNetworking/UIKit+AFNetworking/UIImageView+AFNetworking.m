@@ -1,5 +1,6 @@
 // UIImageView+AFNetworking.m
-// Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
+//
+// Copyright (c) 2013-2014 AFNetworking (http://afnetworking.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -81,7 +82,7 @@
 #pragma clang diagnostic pop
 }
 
-+ (void)setSharedImageCache:(__nullable id <AFImageCache>)imageCache {
++ (void)setSharedImageCache:(id <AFImageCache>)imageCache {
     objc_setAssociatedObject(self, @selector(sharedImageCache), imageCache, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -121,15 +122,15 @@
 
 - (void)setImageWithURLRequest:(NSURLRequest *)urlRequest
               placeholderImage:(UIImage *)placeholderImage
-                       success:(void (^)(NSURLRequest *request, NSHTTPURLResponse * __nullable response, UIImage *image))success
-                       failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse * __nullable response, NSError *error))failure
+                       success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image))success
+                       failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error))failure
 {
     [self cancelImageRequestOperation];
 
     UIImage *cachedImage = [[[self class] sharedImageCache] cachedImageForRequest:urlRequest];
     if (cachedImage) {
         if (success) {
-            success(urlRequest, nil, cachedImage);
+            success(nil, nil, cachedImage);
         } else {
             self.image = cachedImage;
         }
@@ -139,7 +140,7 @@
         if (placeholderImage) {
             self.image = placeholderImage;
         }
-
+        
         __weak __typeof(self)weakSelf = self;
         self.af_imageRequestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         self.af_imageRequestOperation.responseSerializer = self.imageResponseSerializer;

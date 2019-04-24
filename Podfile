@@ -1,7 +1,7 @@
 target "MemoryCard" do
     source 'https://github.com/CocoaPods/Specs.git'
-    platform :ios, '8.0'
+    platform :ios, '7.0'
 
-    pod 'AFNetworking', '~> 2.5'
-    pod 'SwiftyJSON', '~> 4.0'
+    pod 'AFNetworking', '2.5'
+#    pod 'SwiftyJSON', '3.0.0'
 end

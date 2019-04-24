@@ -15,6 +15,7 @@
 		8806657A226652F300C32B53 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88066579226652F300C32B53 /* MemoryGame.swift */; };
 		8806657D22665DE100C32B53 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806657C22665DE100C32B53 /* GameController.swift */; };
 		8815894A2270EBBC000A903F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881589492270EBBC000A903F /* APIClient.swift */; };
+		8815894C2270F51E000A903F /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8815894B2270F51E000A903F /* libAFNetworking.a */; };
 		883F8486226F8B8900EBD2F5 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883F8485226F8B8900EBD2F5 /* CardCell.swift */; };
 		883F8489226F8FA900EBD2F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883F8488226F8FA900EBD2F5 /* Constants.swift */; };
 		8E9BF733D7DA38BC9CDACACF /* libPods-MemoryCard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F53E527586540308C841EFC /* libPods-MemoryCard.a */; };
@@ -32,6 +33,7 @@
 		88066579226652F300C32B53 /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		8806657C22665DE100C32B53 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		881589492270EBBC000A903F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		8815894B2270F51E000A903F /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../../Library/Developer/Xcode/DerivedData/MemoryCard-enlmahoijzsanggpzvemmrlgcehd/Build/Products/Debug-iphonesimulator/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		883F8485226F8B8900EBD2F5 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		883F8488226F8FA900EBD2F5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8BFCD37486749F68539501D4 /* Pods-MemoryCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryCard/Pods-MemoryCard.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8815894C2270F51E000A903F /* libAFNetworking.a in Frameworks */,
 				8E9BF733D7DA38BC9CDACACF /* libPods-MemoryCard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +56,7 @@
 		4AE3E87A399BED9F1E60306C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8815894B2270F51E000A903F /* libAFNetworking.a */,
 				4F53E527586540308C841EFC /* libPods-MemoryCard.a */,
 			);
 			name = Frameworks;

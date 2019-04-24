@@ -82,13 +82,37 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fs9-0B-k9g">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="fs9-0B-k9g" customClass="CardCell" customModule="MemoryCard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7I0-7y-pjU">
+                                                    <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                                    <color key="backgroundColor" red="0.10119599379109701" green="1" blue="0.24349293593971855" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U2v-er-UiG">
+                                                    <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                                    <color key="backgroundColor" red="1" green="0.12370754917235005" blue="0.17202636912997948" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="7I0-7y-pjU" secondAttribute="trailing" id="0QR-e6-QAx"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="U2v-er-UiG" secondAttribute="trailing" id="D1F-0t-7nN"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="7I0-7y-pjU" secondAttribute="bottom" id="KE9-dI-8U8"/>
+                                            <constraint firstItem="7I0-7y-pjU" firstAttribute="top" secondItem="fs9-0B-k9g" secondAttribute="topMargin" id="VZS-uh-WJK"/>
+                                            <constraint firstItem="U2v-er-UiG" firstAttribute="top" secondItem="fs9-0B-k9g" secondAttribute="topMargin" id="WgR-f4-DPU"/>
+                                            <constraint firstItem="7I0-7y-pjU" firstAttribute="leading" secondItem="fs9-0B-k9g" secondAttribute="leadingMargin" id="aDX-IQ-aeW"/>
+                                            <constraint firstItem="U2v-er-UiG" firstAttribute="leading" secondItem="fs9-0B-k9g" secondAttribute="leadingMargin" id="fJ6-EQ-6ul"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="U2v-er-UiG" secondAttribute="bottom" id="sRM-Me-oFW"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="backImageView" destination="7I0-7y-pjU" id="dmm-dP-ybA"/>
+                                            <outlet property="frontImageView" destination="U2v-er-UiG" id="rkq-Ka-am9"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -107,6 +131,7 @@
                     <navigationItem key="navigationItem" id="Ldn-uR-IZG"/>
                     <connections>
                         <outlet property="collectionView" destination="2Do-RP-1hO" id="tNX-uq-daE"/>
+                        <outlet property="timer" destination="b8r-Rm-DX2" id="9Bn-oC-yzk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jw9-ST-WR0" userLabel="First Responder" sceneMemberID="firstResponder"/>

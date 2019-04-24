@@ -12,6 +12,12 @@ import UIKit
 class GameController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var timer: UILabel!
+    
+    var counter = 0
+    var time = Timer()
+    
+    fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
     
     let game = MemoryGame()
     var cards = [Card]()
@@ -24,6 +30,15 @@ class GameController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isHidden = true
+        
+        APIClient.shared.getCardImages { (cardsArray, error) in
+            if let _ = error {
+                // show alert
+            }
+            
+            self.cards = cardsArray!
+            self.setupNewGame()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -46,6 +61,23 @@ class GameController: UIViewController {
     
     @IBAction func onStartGame(_ sender: UIButton) {
         collectionView.isHidden = false
+        
+        counter = 0
+        timer.text = "0:00"
+        
+        time.invalidate()
+        time = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(timerAction),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    @objc func timerAction() {
+        counter += 1
+        timer.text = "0:\(counter)"
     }
 }
 
@@ -62,7 +94,7 @@ extension GameController : UICollectionViewDelegate, UICollectionViewDataSource 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
         
-        cell.showCard(false, animated: false)
+        cell.showCard(false, animted: false)
         
         guard let card = game.cardAtIndex(indexPath.item) else {return cell}
         cell.card = card
@@ -119,7 +151,7 @@ extension GameController : MemoryGameProtocol {
             
             let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! CardCell
             
-            cell.showCard(true, animated: true)
+            cell.showCard(true, animted: true)
         }
     }
     
@@ -131,12 +163,30 @@ extension GameController : MemoryGameProtocol {
             
             let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! CardCell
             
-            cell.showCard(false, animated: true)
+            cell.showCard(false, animted: true)
         }
     }
 }
 
-
+extension GameController: UICollectionViewDelegateFlowLayout {
+    
+    // Collection view flow layout setup
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = Int(sectionInsets.left) * 4
+        let availableWidth = Int(view.frame.width) - paddingSpace
+        let widthPerItem = availableWidth / 4
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
+}
 
 
 
